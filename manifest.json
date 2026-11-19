@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Seller Fee Invoice Downloader",
+  "version": "0.6.0",
+  "description": "Bulk-download Amazon Seller Fee Invoices using the Seller Central invoice endpoint, with date filtering.",
+  "permissions": ["activeTab", "downloads"],
+  "host_permissions": ["https://sellercentral.amazon.in/*"],
+  "action": {"default_title": "Seller Fee Invoice Downloader", "default_popup": "popup.html"},
+  "background": {"service_worker": "background.js"},
+  "content_scripts": [{"matches": ["https://sellercentral.amazon.in/*"], "js": ["content.js"], "run_at": "document_idle"}]
+}
